@@ -1,0 +1,112 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap for better spacing */
+}
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px; /* Increased padding for better spacing */
+    margin: 10px;
+    width: calc(50% - 20px); /* Adjusted to fit 4 cards per page */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: right; /* Added for RTL */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+}
+.product:hover {
+    transform: translateY(-5px); /* Added hover effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+.product h3 {
+    margin-top: 0;
+    font-size: 1.5em; /* Increased font size for better readability */
+}
+.product ul {
+    list-style-type: none;
+    padding: 0;
+}
+.product ul li {
+    margin-bottom: 5px;
+}
+
+.gametoy-bootstrap {
+    direction: rtl;
+    text-align: right;
+}
+.gametoy-menu-item {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Button styles */
+#loadMore {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#loadMore:hover {
+    background-color: #0056b3;
+}
+.wrap.gametoy-bootstrap {
+    direction: rtl;
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+.wrap.gametoy-bootstrap h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.wrap.gametoy-bootstrap .form-group {
+    margin-bottom: 15px;
+}
+
+.wrap.gametoy-bootstrap label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.wrap.gametoy-bootstrap input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.wrap.gametoy-bootstrap button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wrap.gametoy-bootstrap button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.wrap.gametoy-bootstrap .api-response {
+    margin-top: 20px;
+}
+
+.wrap.gametoy-bootstrap .api-response h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.wrap.gametoy-bootstrap .api-response p {
+    font-size: 1em;
+    color: #666;
+}

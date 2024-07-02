@@ -4,6 +4,7 @@ Plugin Name: GameToy
 Description: A plugin to display API results in the admin dashboard.
 Version: 1.0
 Author: Your Name
+Text Domain: gametoy
 */
 
 // Add menu item to admin dashboard
@@ -11,32 +12,43 @@ add_action('admin_menu', 'gametoy_add_admin_menu');
 
 function gametoy_add_admin_menu() {
     add_menu_page(
-        'GameToy Settings', // Page title
-        'GameToy', // Menu title
+        __('GameToy Settings', 'gametoy'), // Page title
+        __('GameToy', 'gametoy'), // Menu title
         'manage_options', // Capability
         'gametoy', // Menu slug
-        'gametoy_settings_page' // Function to display the page
+        'gametoy_settings_page', // Function to display the page
+        '', // Icon URL
+        6 // Position
     );
 }
 
 function gametoy_settings_page() {
     ?>
-    <div class="wrap">
-        <h1>GameToy Settings</h1>
-        <form method="post" action="">
-            <input type="hidden" name="gametoy_action" value="fetch_api_data">
-            <input type="submit" value="Fetch API Data" class="button button-primary">
-        </form>
-        <?php
-        if (isset($_POST['gametoy_action']) && $_POST['gametoy_action'] == 'fetch_api_data') {
-            $response = getGoodsList(1, 8);
-            echo '<h2>API Response</h2>';
-            echo '<pre>' . print_r($response, true) . '</pre>';
-        }
-        ?>
+    <div class="wrap gametoy-bootstrap">
+        <h1><?php _e('GameToy Settings', 'gametoy'); ?></h1>
+        <?php include plugin_dir_path(__FILE__) . 'includes/form.php'; ?>
+        <div class="api-response">
+            <?php
+            if (isset($_POST['gametoy_action']) && $_POST['gametoy_action'] == 'fetch_api_data') {
+                $pageNum = intval($_POST['pageNum']);
+                $pageSize = intval($_POST['pageSize']);
+                $response = getGoodsList($pageNum, $pageSize);
+                include plugin_dir_path(__FILE__) . 'includes/display-api-response.php';
+                if (!isset($response['data']) || empty($response['data'])) {
+                    echo '<p>' . __('No data available', 'gametoy') . '</p>';
+                }
+            }
+            ?>
+        </div>
     </div>
     <?php
 }
+
+function gametoy_enqueue_scripts() {
+    wp_enqueue_style('gametoy-style', plugin_dir_url(__FILE__) . 'assets/css/style.css');
+    wp_enqueue_script('gametoy-script', plugin_dir_url(__FILE__) . 'assets/js/script.js', [], false, true);
+}
+add_action('admin_enqueue_scripts', 'gametoy_enqueue_scripts');
 
 // Include the API function
 include plugin_dir_path(__FILE__) . 'includes/class-gametoy-api.php';
