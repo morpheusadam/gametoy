@@ -1,57 +1,43 @@
 <?php
 /*
 Plugin Name: GameToy
-Description: افزونه برای برقراری رابطه بین WooCommerce و یک سایت خارجی.
+Description: A plugin to display API results in the admin dashboard.
 Version: 1.0
-Author: نام شما
+Author: Your Name
 */
 
-// جلوگیری از دسترسی مستقیم
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-// تعریف ثابت‌ها
-define( 'GAMETOY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-
-// بارگذاری فایل‌های مورد نیاز
-require_once GAMETOY_PLUGIN_DIR . 'includes/class-gametoy-api.php';
-require_once GAMETOY_PLUGIN_DIR . 'includes/class-gametoy-sync.php';
-require_once GAMETOY_PLUGIN_DIR . 'admin/gametoy-admin-page.php';
-
-// فعال‌سازی افزونه
-function gametoy_activate() {
-    // کدهای فعال‌سازی
-}
-register_activation_hook( __FILE__, 'gametoy_activate' );
-
-// غیرفعال‌سازی افزونه
-function gametoy_deactivate() {
-    // کدهای غیرفعال‌سازی
-}
-register_deactivation_hook( __FILE__, 'gametoy_deactivate' );
-
-// افزودن آیتم به منوی داشبورد
-function gametoy_add_admin_menu() {
-    add_menu_page(
-        'GameToy Settings', // عنوان صفحه
-        'GameToy',          // عنوان منو
-        'manage_options',   // قابلیت دسترسی
-        'gametoy',          // اسلاگ منو
-        'gametoy_admin_page', // تابع نمایش صفحه
-        'dashicons-admin-generic', // آیکون منو
-        6                   // موقعیت منو
-    );
-}
+// Add menu item to admin dashboard
 add_action('admin_menu', 'gametoy_add_admin_menu');
 
-// نمایش پیام در داشبورد وردپرس
-function gametoy_admin_notice() {
+function gametoy_add_admin_menu() {
+    add_menu_page(
+        'GameToy Settings', // Page title
+        'GameToy', // Menu title
+        'manage_options', // Capability
+        'gametoy', // Menu slug
+        'gametoy_settings_page' // Function to display the page
+    );
+}
+
+function gametoy_settings_page() {
     ?>
-    <div class="notice notice-success is-dismissible">
-        <p>افزونه GameToy با موفقیت فعال شد!</p>
+    <div class="wrap">
+        <h1>GameToy Settings</h1>
+        <form method="post" action="">
+            <input type="hidden" name="gametoy_action" value="fetch_api_data">
+            <input type="submit" value="Fetch API Data" class="button button-primary">
+        </form>
+        <?php
+        if (isset($_POST['gametoy_action']) && $_POST['gametoy_action'] == 'fetch_api_data') {
+            $response = getGoodsList(1, 8);
+            echo '<h2>API Response</h2>';
+            echo '<pre>' . print_r($response, true) . '</pre>';
+        }
+        ?>
     </div>
     <?php
 }
-add_action('admin_notices', 'gametoy_admin_notice');
+
+// Include the API function
+include plugin_dir_path(__FILE__) . 'includes/class-gametoy-api.php';
 ?>
