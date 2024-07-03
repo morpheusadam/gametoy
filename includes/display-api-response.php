@@ -10,7 +10,9 @@ if (!empty($response['data'])) {
     echo '<div class="load-more-container text-center">'; // Added container for Load More button
     echo '<button id="loadMore" class="btn btn-primary">' . __('Load More', 'gametoy') . '</button>'; // Added Load More button
     echo '</div>';
+    write_log('Displayed products and Load More button.'); // Log message
 } else {
     echo '<p class="text-right">' . __('No products found.', 'gametoy') . '</p>'; // Added text-right class for RTL
+    write_log('No products found.'); // Log message
 }
 ?>

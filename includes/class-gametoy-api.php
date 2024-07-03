@@ -36,6 +36,7 @@ function getGoodsList($pageNum, $pageSize) {
     $response = curl_exec($ch);
     if (curl_errno($ch)) {
         echo 'Error:' . curl_error($ch);
+        write_log('CURL error: ' . curl_error($ch)); // Log message
     }
     curl_close($ch);
 
@@ -46,6 +47,9 @@ function getGoodsList($pageNum, $pageSize) {
         foreach ($data['data'] as $product) {
             gametoy_add_product_to_woocommerce($product);
         }
+        write_log('Products added to WooCommerce.'); // Log message
+    } else {
+        write_log('No products found in API response.'); // Log message
     }
 
     return $data;
@@ -60,6 +64,9 @@ function gametoy_add_product_to_woocommerce($product) {
         $new_product->set_sku($product['id']);
         $new_product->set_description('Cost Currency: ' . $product['costCurrency']);
         $new_product->save();
+        write_log('Added new product to WooCommerce: ' . $product['goodsName']); // Log message
+    } else {
+        write_log('Product already exists in WooCommerce: ' . $product['goodsName']); // Log message
     }
 }
 ?>
