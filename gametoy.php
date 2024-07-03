@@ -29,13 +29,22 @@ function gametoy_settings_page() {
         <?php include plugin_dir_path(__FILE__) . 'includes/form.php'; ?>
         <div class="api-response">
             <?php
-            if (isset($_POST['gametoy_action']) && $_POST['gametoy_action'] == 'fetch_api_data') {
+            if (isset($_POST['gametoy_action'])) {
                 $pageNum = intval($_POST['pageNum']);
                 $pageSize = intval($_POST['pageSize']);
-                $response = getGoodsList($pageNum, $pageSize);
-                include plugin_dir_path(__FILE__) . 'includes/display-api-response.php';
-                if (!isset($response['data']) || empty($response['data'])) {
-                    echo '<p>' . __('No data available', 'gametoy') . '</p>';
+                if ($_POST['gametoy_action'] == 'fetch_api_data') {
+                    $response = getGoodsList($pageNum, $pageSize);
+                    include plugin_dir_path(__FILE__) . 'includes/display-api-response.php';
+                    if (!isset($response['data']) || empty($response['data'])) {
+                        echo '<p>' . __('No data available', 'gametoy') . '</p>';
+                    }
+                } elseif ($_POST['gametoy_action'] == 'import_data') {
+                    $response = getGoodsList($pageNum, $pageSize);
+                    if (!isset($response['data']) || empty($response['data'])) {
+                        echo '<p>' . __('No data available', 'gametoy') . '</p>';
+                    } else {
+                        echo '<p>' . __('Products have been added to WooCommerce.', 'gametoy') . '</p>';
+                    }
                 }
             }
             ?>

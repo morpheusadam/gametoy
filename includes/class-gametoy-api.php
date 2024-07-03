@@ -39,6 +39,27 @@ function getGoodsList($pageNum, $pageSize) {
     }
     curl_close($ch);
 
-    return json_decode($response, true);
+    $data = json_decode($response, true);
+
+    // Add products to WooCommerce
+    if (!empty($data['data'])) {
+        foreach ($data['data'] as $product) {
+            gametoy_add_product_to_woocommerce($product);
+        }
+    }
+
+    return $data;
+}
+
+function gametoy_add_product_to_woocommerce($product) {
+    $product_id = wc_get_product_id_by_sku($product['id']);
+    if (!$product_id) {
+        $new_product = new WC_Product_Simple();
+        $new_product->set_name($product['goodsName']);
+        $new_product->set_regular_price($product['payPrice']);
+        $new_product->set_sku($product['id']);
+        $new_product->set_description('Cost Currency: ' . $product['costCurrency']);
+        $new_product->save();
+    }
 }
 ?>

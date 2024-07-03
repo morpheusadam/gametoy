@@ -9,4 +9,5 @@
         <input type="number" id="pageSize" name="pageSize" value="<?php echo isset($_POST['pageSize']) ? intval($_POST['pageSize']) : 8; ?>" class="form-control" required>
     </div>
     <button type="submit" class="btn btn-primary"><?php _e('Fetch API Data', 'gametoy'); ?></button>
+    <button type="submit" name="gametoy_action" value="import_data" class="btn btn-secondary"><?php _e('Import to WooCommerce', 'gametoy'); ?></button>
 </form>

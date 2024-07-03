@@ -7,7 +7,9 @@ if (!empty($response['data'])) {
         include plugin_dir_path(__FILE__) . 'display-product-card.php';
     }
     echo '</div>';
-    echo '<button id="loadMore" data-page-num="1">' . __('Load More', 'gametoy') . '</button>'; // Added Load More button
+    echo '<div class="load-more-container text-center">'; // Added container for Load More button
+    echo '<button id="loadMore" class="btn btn-primary">' . __('Load More', 'gametoy') . '</button>'; // Added Load More button
+    echo '</div>';
 } else {
     echo '<p class="text-right">' . __('No products found.', 'gametoy') . '</p>'; // Added text-right class for RTL
 }
