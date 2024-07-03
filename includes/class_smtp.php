@@ -39,3 +39,4 @@ function create_persian_email_template($subject, $body) {
     ";
     return array('subject' => $subject, 'body' => $template);
 }
+?>

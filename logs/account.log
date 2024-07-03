@@ -1,0 +1,32 @@
+[2024-07-03 23:40:01] Order status changed to completed for order ID: 80
+[2024-07-03 23:40:01] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 80,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3782",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 1500 + 300",
+                "value": "3782",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-03 23:40:02] {
+    "message": "Order ID: 80 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c"
+        },
+        "data": null,
+        "page": null
+    }
+}

@@ -21,6 +21,15 @@ function gametoy_add_admin_menu() {
         'gametoy_logs', // Menu slug
         'gametoy_logs_page' // Function to display the page
     );
+
+    add_submenu_page(
+        'gametoy', // Parent slug
+        __('Account Logs', 'gametoy'), // Page title
+        __('Account Logs', 'gametoy'), // Menu title
+        'manage_options', // Capability
+        'gametoy_account_logs', // Menu slug
+        'gametoy_account_logs_page' // Function to display the page
+    );
 }
 
 // Include settings page
@@ -28,4 +37,7 @@ include plugin_dir_path(__FILE__) . 'settings-page.php';
 
 // Include logs page
 include plugin_dir_path(__FILE__) . 'logs-page.php';
+
+// Include account logs page
+include plugin_dir_path(__FILE__) . 'account-logs-page.php';
 ?>

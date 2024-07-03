@@ -4,7 +4,7 @@
 add_action('woocommerce_order_status_completed', 'gametoy_order_status_completed', 10, 1);
 
 function gametoy_order_status_completed($order_id) {
-    write_log('Order status changed to completed for order ID: ' . $order_id); // Log message
+    account_log('Order status changed to completed for order ID: ' . $order_id); // Log message
 
     $order = wc_get_order($order_id);
 
@@ -33,7 +33,7 @@ function gametoy_order_status_completed($order_id) {
     }
 
     // Log the prepared data
-    write_log([
+    account_log([
         'message' => 'Prepared data for API request',
         'data' => [
             'ip' => $ip,
@@ -49,9 +49,17 @@ function gametoy_order_status_completed($order_id) {
     $response = submitOrder($ip, $merchantOrderId, $notifyUrl, $priceGroupGoodsId, $buyNumber, json_encode($rechargePlatformConfig));
 
     // Log the full response
-    write_log([
+    account_log([
         'message' => 'Order ID: ' . $order_id . ' - Full API Response',
         'response' => $response
     ]);
+
+    // Send email to customer
+    $customer_email = $order->get_billing_email();
+    $subject = 'اطلاعات سفارش شما';
+    $body = 'سفارش شما با شماره ' . $order_id . ' تکمیل شد. اطلاعات سفارش شما به شرح زیر است: <br>' . json_encode($rechargePlatformConfig, JSON_PRETTY_PRINT);
+    $email_template = create_persian_email_template($subject, $body);
+
+    wp_mail($customer_email, $email_template['subject'], $email_template['body'], ['Content-Type: text/html; charset=UTF-8']);
 }
 ?>
