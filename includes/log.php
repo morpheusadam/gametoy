@@ -13,11 +13,15 @@ function write_log($message) {
     $timestamp = current_time('Y-m-d H:i:s');
 
     // Format the log message
-    $formatted_message = "[{$timestamp}] {$message}\n";
+    if (is_array($message) || is_object($message)) {
+        $formatted_message = "[{$timestamp}] " . json_encode($message, JSON_PRETTY_PRINT) . "\n";
+    } else {
+        $formatted_message = "[{$timestamp}] {$message}\n";
+    }
 
     // Write the log message to the file
     if (file_put_contents($log_file, $formatted_message, FILE_APPEND) === false) {
         error_log("Failed to write to log file: {$log_file}");
     }
 }
-
+?>

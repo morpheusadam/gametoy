@@ -18,4 +18,10 @@ include plugin_dir_path(__FILE__) . 'includes/class-gametoy-api.php';
 
 // Include log function
 include plugin_dir_path(__FILE__) . 'includes/log.php';
+
+// Include WooCommerce hooks
+include plugin_dir_path(__FILE__) . 'includes/woocommerce-hooks.php';
+
+// Include submit order function
+include plugin_dir_path(__FILE__) . 'includes/class-gametoy-submitorder.php';
 ?>
