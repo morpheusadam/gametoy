@@ -1,0 +1,10 @@
+[2024-07-06 10:55:51] SMTP Debug level 1; message: SMTP ERROR: Failed to connect to server: Connection refused (111)
+[2024-07-06 10:55:51] SMTP Debug level 2; message: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[2024-07-06 10:55:51] Failed to send email. Error: SMTP Error: Could not connect to SMTP host. Failed to connect to serverSMTP server error: Failed to connect to server SMTP code: 111 Additional SMTP info: Connection refused
+[2024-07-06 10:55:52] SMTP Debug level 1; message: SMTP ERROR: Failed to connect to server: Connection refused (111)
+[2024-07-06 10:55:52] SMTP Debug level 2; message: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[2024-07-06 10:56:34] SMTP Debug level 1; message: SMTP ERROR: Failed to connect to server: Connection refused (111)
+[2024-07-06 10:56:34] SMTP Debug level 2; message: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[2024-07-06 10:56:34] Failed to send email. Error: SMTP Error: Could not connect to SMTP host. Failed to connect to serverSMTP server error: Failed to connect to server SMTP code: 111 Additional SMTP info: Connection refused
+[2024-07-06 10:56:35] SMTP Debug level 1; message: SMTP ERROR: Failed to connect to server: Connection refused (111)
+[2024-07-06 10:56:35] SMTP Debug level 2; message: SMTP Error: Could not connect to SMTP host. Failed to connect to server

@@ -1,15 +1,11 @@
 <?php
-// تنظیمات SMTP
+// تنظیمات SMTP با استفاده از OAuth2
 add_action('phpmailer_init', function($phpmailer) {
-    $phpmailer->isSMTP();
-    $phpmailer->Host = 'mail.cigiftcard.com';
-    $phpmailer->SMTPAuth = true;
-    $phpmailer->Port = 587;
-    $phpmailer->Username = 'shop@cigiftcard.com';
-    $phpmailer->Password = 'Aa1707489@';
-    $phpmailer->SMTPSecure = 'tls';
-    $phpmailer->From = 'shop@cigiftcard.com';
-    $phpmailer->FromName = 'گیف کارد';
+    ini_set('display_errors', 1); // Corrected 'display_error' to 'display_errors'
+    error_reporting(E_ALL);
+    $from = "sender@cigiftcard.com";
+    $headers = "From: " . $from . "\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 });
 
 // قالب ایمیل رسمی و شرکتی و فارسی

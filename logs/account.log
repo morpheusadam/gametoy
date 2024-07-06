@@ -1,5 +1,69 @@
-[2024-07-03 23:40:01] Order status changed to completed for order ID: 80
-[2024-07-03 23:40:01] {
+[2024-07-06 10:26:43] {
+    "message": "Order ID: 78 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6023,
+            "message": "Duplicate order.\uff08\u91cd\u590d\u4e0b\u5355\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:44] Order status changed to completed for order ID: 79
+[2024-07-06 10:26:44] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 79,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3781",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 3000 + 850",
+                "value": "3781",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:49] Order status changed to completed for order ID: 110
+[2024-07-06 10:26:49] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 110,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3782",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 1500 + 300",
+                "value": "3782",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:49] {
+    "message": "Order ID: 79 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6023,
+            "message": "Duplicate order.\uff08\u91cd\u590d\u4e0b\u5355\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:49] Order status changed to completed for order ID: 80
+[2024-07-06 10:26:49] {
     "message": "Prepared data for API request",
     "data": {
         "ip": "172.20.48.1",
@@ -18,13 +82,313 @@
         ]
     }
 }
-[2024-07-03 23:40:02] {
+[2024-07-06 10:26:50] {
     "message": "Order ID: 80 - Full API Response",
     "response": {
         "result": false,
         "error": {
             "code": 6017,
-            "message": "\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c"
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:51] Order status changed to completed for order ID: 81
+[2024-07-06 10:26:51] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 81,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3778",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE Elite Pass \u79ae\u5305\uff08A7\uff09",
+                "value": "3778",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:52] {
+    "message": "Order ID: 81 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:52] Order status changed to completed for order ID: 82
+[2024-07-06 10:26:52] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 82,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3781",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 3000 + 850",
+                "value": "3781",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:55] {
+    "message": "Order ID: 82 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:55] Order status changed to completed for order ID: 83
+[2024-07-06 10:26:55] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 83,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3781",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 3000 + 850",
+                "value": "3781",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:56] {
+    "message": "Order ID: 83 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:57] Order status changed to completed for order ID: 84
+[2024-07-06 10:26:57] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 84,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3780",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 6000 + 2100",
+                "value": "3780",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:57] {
+    "message": "Order ID: 84 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:26:58] Order status changed to completed for order ID: 85
+[2024-07-06 10:26:58] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 85,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3783",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 600 + 60",
+                "value": "3783",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:26:59] {
+    "message": "Order ID: 85 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6023,
+            "message": "Duplicate order.\uff08\u91cd\u590d\u4e0b\u5355\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:27:28] {
+    "message": "Order ID: 110 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:28:28] Order status changed to completed for order ID: 110
+[2024-07-06 10:28:28] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 110,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3782",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 1500 + 300",
+                "value": "3782",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:28:29] {
+    "message": "Order ID: 110 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:29:09] Order status changed to completed for order ID: 85
+[2024-07-06 10:29:09] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 85,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3783",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 600 + 60",
+                "value": "3783",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:29:10] {
+    "message": "Order ID: 85 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6023,
+            "message": "Duplicate order.\uff08\u91cd\u590d\u4e0b\u5355\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:55:50] Order status changed to completed for order ID: 84
+[2024-07-06 10:55:50] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 84,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3780",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 6000 + 2100",
+                "value": "3780",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:55:51] {
+    "message": "Order ID: 84 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
+        },
+        "data": null,
+        "page": null
+    }
+}
+[2024-07-06 10:56:32] Order status changed to completed for order ID: 83
+[2024-07-06 10:56:32] {
+    "message": "Prepared data for API request",
+    "data": {
+        "ip": "172.20.48.1",
+        "merchantOrderId": 83,
+        "notifyUrl": "http:\/\/bittop.local\/wc-api\/WC_Gateway_Gametoy",
+        "priceGroupGoodsId": "3781",
+        "buyNumber": 1,
+        "rechargePlatformConfig": [
+            {
+                "name": "PUBG MOBILE UC 3000 + 850",
+                "value": "3781",
+                "filedName": "playerid",
+                "selected": 0,
+                "tip": "1"
+            }
+        ]
+    }
+}
+[2024-07-06 10:56:33] {
+    "message": "Order ID: 83 - Full API Response",
+    "response": {
+        "result": false,
+        "error": {
+            "code": 6017,
+            "message": "Merchant balance is insufficient. Please recharge.\uff08\u5546\u6237\u4f59\u989d\u4e0d\u8db3\uff0c\u8bf7\u5145\u503c\uff09"
         },
         "data": null,
         "page": null

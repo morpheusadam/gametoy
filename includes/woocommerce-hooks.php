@@ -33,7 +33,7 @@ function gametoy_order_status_completed($order_id) {
     }
 
     // Log the prepared data
-    account_log([
+    $log_data = [
         'message' => 'Prepared data for API request',
         'data' => [
             'ip' => $ip,
@@ -43,23 +43,35 @@ function gametoy_order_status_completed($order_id) {
             'buyNumber' => $buyNumber,
             'rechargePlatformConfig' => $rechargePlatformConfig
         ]
-    ]);
+    ];
+    account_log($log_data);
 
     // Call the API
     $response = submitOrder($ip, $merchantOrderId, $notifyUrl, $priceGroupGoodsId, $buyNumber, json_encode($rechargePlatformConfig));
 
     // Log the full response
-    account_log([
+    $response_log = [
         'message' => 'Order ID: ' . $order_id . ' - Full API Response',
         'response' => $response
-    ]);
+    ];
+    account_log($response_log);
 
     // Send email to customer
     $customer_email = $order->get_billing_email();
     $subject = 'اطلاعات سفارش شما';
-    $body = 'سفارش شما با شماره ' . $order_id . ' تکمیل شد. اطلاعات سفارش شما به شرح زیر است: <br>' . json_encode($rechargePlatformConfig, JSON_PRETTY_PRINT);
+    $body = json_encode($response['response'], JSON_PRETTY_PRINT); // فقط ارسال response
+
     $email_template = create_persian_email_template($subject, $body);
 
-    wp_mail($customer_email, $email_template['subject'], $email_template['body'], ['Content-Type: text/html; charset=UTF-8']);
+    // Send email and log the result
+    $headers = "From: sender@cigiftcard.com\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $mail_sent = mail($customer_email, $email_template['subject'], $email_template['body'], $headers);
+
+    if ($mail_sent) {
+        write_log('Email sent successfully to: ' . $customer_email);
+    } else {
+        write_log('Failed to send email.');
+    }
 }
 ?>
