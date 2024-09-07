@@ -58,3 +58,10 @@ GameToy is a WordPress plugin that provides a RESTful API for game-related data.
 3. Authentication is required for creating, updating, and deleting game data. Use WordPress REST API authentication methods such as application passwords or OAuth.
 
 ## Project Structure
+
+## 📞 Contact Me
+<div align="center">
+    <a href="https://www.linkedin.com/in/hesam-ahmadpour" style="color: red; font-size: 20px; text-decoration: none;">LinkedIn</a> |
+    <a href="https://t.me/morpheusadam" style="color: red; font-size: 20px; text-decoration: none;">Telegram</a>
+</div>
+
