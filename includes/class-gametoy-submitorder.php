@@ -1,8 +1,16 @@
 <?php
 function submitOrder($ip, $merchantOrderId, $notifyUrl, $priceGroupGoodsId, $buyNumber, $rechargePlatformConfig) {
     $url = "http://merchantapi.vtrustcard.com/api/v1/submitOrder";
-    $clientId = "fefd9390573126a3f3be47452a084325";
-    $clientSecret = "2baf41c8a36a98363239e0637b804ba9";
+
+    $creds        = gametoy_get_api_credentials();
+    $clientId     = $creds['clientId'];
+    $clientSecret = $creds['clientSecret'];
+
+    if ( empty( $clientId ) || empty( $clientSecret ) ) {
+        write_log( 'GameToy API credentials are not configured. Set them under GameToy → Settings (or in wp-config.php).' );
+        return array( 'error' => 'API credentials are not configured.' );
+    }
+
     $timestamp = time(); // Current timestamp
     $nonce = bin2hex(random_bytes(16)); // Generate a random nonce
 
@@ -32,24 +40,15 @@ function submitOrder($ip, $merchantOrderId, $notifyUrl, $priceGroupGoodsId, $buy
         "Content-Type: application/json"
     ];
 
-    // Debugging information
-    echo "Request URL: $url\n";
-    echo "Request Headers: " . print_r($headers, true) . "\n";
-    echo "Request Parameters: " . json_encode($requestParams) . "\n";
-
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($requestParams)); // Send request parameters as JSON payload
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Disable SSL peer verification
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // Disable SSL host verification
 
     $response = curl_exec($ch);
     if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
-    } else {
-        echo "Response: " . $response . "\n";
+        write_log('CURL error (submitOrder): ' . curl_error($ch));
     }
     curl_close($ch);
 
