@@ -5,11 +5,11 @@
 ### A WordPress + WooCommerce plugin that connects your store to an external game-recharge merchant REST API — syncing products and auto-submitting top-up orders, with logging and SMTP email notifications.
 
 <p>
-  <img src="https://img.shields.io/github/license/morpheusadam/gametoy?style=for-the-badge&color=4c1" alt="License" />
-  <img src="https://img.shields.io/github/stars/morpheusadam/gametoy?style=for-the-badge&color=ffca28" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/morpheusadam/gametoy?style=for-the-badge&color=42a5f5" alt="Forks" />
-  <img src="https://img.shields.io/github/last-commit/morpheusadam/gametoy?style=for-the-badge&color=8e44ad" alt="Last commit" />
-  <img src="https://img.shields.io/github/repo-size/morpheusadam/gametoy?style=for-the-badge&color=e67e22" alt="Repo size" />
+  <img src="https://img.shields.io/github/license/morpheusadam/TopUpBridge?style=for-the-badge&color=4c1" alt="License" />
+  <img src="https://img.shields.io/github/stars/morpheusadam/TopUpBridge?style=for-the-badge&color=ffca28" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/morpheusadam/TopUpBridge?style=for-the-badge&color=42a5f5" alt="Forks" />
+  <img src="https://img.shields.io/github/last-commit/morpheusadam/TopUpBridge?style=for-the-badge&color=8e44ad" alt="Last commit" />
+  <img src="https://img.shields.io/github/repo-size/morpheusadam/TopUpBridge?style=for-the-badge&color=e67e22" alt="Repo size" />
 </p>
 
 <p>
@@ -83,7 +83,7 @@ It is built for **store owners and developers** running a WooCommerce-based digi
 4. **Activate** the plugin from the Plugins menu.
 
 ```bash
-git clone https://github.com/morpheusadam/gametoy.git
+git clone https://github.com/morpheusadam/TopUpBridge.git
 ```
 
 ---
@@ -122,7 +122,7 @@ gametoy/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Open an [issue](https://github.com/morpheusadam/gametoy/issues) or submit a pull request with new integrations, improvements, or fixes.
+Contributions are welcome! Open an [issue](https://github.com/morpheusadam/TopUpBridge/issues) or submit a pull request with new integrations, improvements, or fixes.
 
 > ⚠️ **Security note:** do not commit real API credentials or secrets. Keep merchant keys in configuration/environment, not in source.
 
@@ -153,8 +153,8 @@ Web developer & cheerful hacker · PHP · Laravel · Go
 
 ## ⭐ Star History
 
-<a href="https://star-history.com/#morpheusadam/gametoy&Date">
-  <img src="https://api.star-history.com/svg?repos=morpheusadam/gametoy&type=Date" alt="gametoy — Star History Chart" width="70%" />
+<a href="https://star-history.com/#morpheusadam/TopUpBridge&Date">
+  <img src="https://api.star-history.com/svg?repos=morpheusadam/TopUpBridge&type=Date" alt="gametoy — Star History Chart" width="70%" />
 </a>
 
 <div align="center">
