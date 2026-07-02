@@ -1,7 +1,5 @@
 <div align="center">
-
-# 🎮 GameToy — WooCommerce Game Recharge API Bridge
-
+# 🎮 Top Up Bridge — WooCommerce Game Recharge API Bridge
 ### A WordPress + WooCommerce plugin that connects your store to an external game-recharge merchant REST API — syncing products and auto-submitting top-up orders, with logging and SMTP email notifications.
 
 <p>
